@@ -14,5 +14,14 @@ The idea revolves around overcoming the financial constraints faced by farmers d
 
 Additionally, the idea addresses the difficulty in validating farmers' efforts and gaining recognition for their sustainability contributions. A reliable validation system will be implemented to certify and verify sustainable farming practices. This system will involve rigorous evaluation and monitoring of farmers' adherence to sustainability standards, providing them with a recognized certification. This validation system will enhance farmers' credibility, boost consumer confidence, and grant them access to markets that prioritize sustainability.
 
+### Tools used:
+Solidity
+OpenZeppelin
+ERC20 Token standards
+Ethereum Blockchain
+Hardhat
+MetaMask
+HTML/CSS
+JavaScript
 
 youtube link: https://youtu.be/aRkqJEzUXZk
