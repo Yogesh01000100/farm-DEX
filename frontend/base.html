@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decentralised Marketplace</title>
+    <style>
+        
+
+        .navbar {
+            background-color: #1a1e47;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            height: 60px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .navbar-nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-item {
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+        .nav-link:hover {
+            background-color: #555;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+    
+            background: linear-gradient(120deg, #1d6d86, #320e8594);
+            color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+            gap: 20px;
+        }
+
+        .item {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(233, 234, 225, 0.2);
+            border-radius: 10px;
+        }
+
+        .cors {
+            border-style: dashed;
+            border-radius: 7px;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h2,
+        h3 {
+            margin: 0;
+        }
+
+        span {
+            font-weight: bold;
+        }
+
+        input[type="number"],
+        input[type="text"] {
+            width: 230px;
+            padding: 10px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: rgba(255, 255, 255, 0.8);
+            color: #333;
+        }
+
+        .bol {
+            margin-bottom: 10px;
+        }
+
+        .lom {
+            background-color: rgba(114, 177, 222, 0.518);
+            padding: 10px;
+            border-radius: 10px;
+            margin: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #2b3b97d7;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 16px;
+            font-family: 'Courier New', Courier, monospace;
+            transition: background-color 0.5s ease;
+        }
+        .fo{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .topo {
+            width: 250px;
+            height: 35px;
+            border-radius: 4px;
+            border: none;
+            margin-top: 6px;
+        }
+        .c{
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 23px;
+        }
+        button:hover {
+            background-color: #3d4eb1d7;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        .l{
+            margin-top: 35px;
+            font-size: 25px;
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            font-size: 15px;
+            margin-bottom: 13px;
+        }
+
+        .zab {
+            display: flex;
+            flex-direction: column;
+            font-size: 25px;
+
+        }
+
+        .sol {
+            display: flex;
+            flex-direction: row;
+        }
+
+
+
+        .dex {
+            background-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c">
+    <nav class="navbar">
+        <a class="navbar-brand" href="#">Decentralised Farming Credit System</a>
+        <ul class="navbar-nav">
+            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
+
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="container">
+
+                <div class="sol">
+                    <div class="zab">
+                        <h1 class="header">Account Address: <span id="accountAddress"></span></h1>
+
+                        <div>
+                            My Token Balance: <span id="tokensBalance"></span>
+                        </div>
+                        <div>
+                            <button onclick="getTokenBalance()">Update My Tokens</button>
+                        </div>
+
+                    </div>
+
+
+
+
+                </div>
+                <div>
+                    <h3>Tokens Available in DEX: <span id="tokensAvailable"></span></h3>
+                    <button onclick="getAvailableTokens()">Update Tokens Available</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="item">
+                <h3>Grant DEX Access</h3>
+                <div>
+                    <input type="number" min="0" placeholder="Enter number of tokens" id="tokenGrant">
+                    <button onclick="grantAccess()">Grant (Only Owner)</button>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Sell Tokens</h3>
+                <button onclick="sell()">Sell (Only Owner)</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <!--<div class="item">
+                <h3>Buy Tokens</h3>
+                <div>
+                    <input type="number" min="0" placeholder="Enter number of tokens" id="tokensToBuy">
+                    <button onclick="buy()">Buy</button>
+                </div>
+            </div>
+            <div class="item">
+                <h3>Token Price: <span id="tokenPrice"></span></h3>
+                <button onclick="getPrice()">Update Price</button>
+            </div>-->
+
+        </div>
+    </div>
+
+    <div class="lom cors">
+        <div class="container">
+            <h2>Farmer Registration</h2>
+            <div class="row">
+                <div class="item">
+                    <label for="farmerName">Name:</label>
+                    <input class="topo" type="text" id="farmerName">
+                </div>
+                <div class="item">
+                    <label for="farmerAge">Age:</label>
+                    <input class="topo" type="number" min="0" id="farmerAge">
+                </div>
+
+                <div class="item">
+                    <label for="farmerLocation">Location:</label>
+                    <input class="topo" type="text" id="farmerLocation">
+                </div>
+                <div class="item">
+                    <label for="farmerPhoneNumber">Phone Number:</label>
+                    <input class="topo" type="text" id="farmerPhoneNumber">
+                </div>
+            </div>
+            <div class="row">
+                <div class="items">
+                    <button onclick="registerFarmer()">Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Fetch Farmer Data</h2>
+        <div class="row">
+            <div class="item">
+                <button onclick="getFarmerCount()">Get Farmer Count</button>
+            </div>
+            <div class="item">
+                <label for="farmerAddress">Farmer Address:</label>
+                <input class="topo" type="text" id="farmerAddress">
+                <button onclick="getFarmerByAddress()">Get Farmer Details</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container cors">
+        <div class="l">
+            <h2>Submit Data</h2>
+        </div>
+        <div class="fo">
+            <div>
+                <label for="harvestDuration">Harvest Duration:</label>
+                <input type="number" id="harvestDuration">
+
+            </div>
+            <div>
+                <button onclick="setHarvestDuration()">Set Harvest Duration</button>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="item">
+                    <label for="day">Day:</label>
+                    <input type="number" min="1" id="day">
+                </div>
+                <div class="item">
+                    <label for="soilHealth">Soil Health:</label>
+                    <input type="number" min="0" max="100" id="soilHealth">
+                </div>
+                <div class="item">
+                    <label for="irrigationType">Irrigation Type:</label>
+                    <input type="number" min="0" max="1" id="irrigationType">
+                </div>
+                <div class="item">
+                    <label for="sapAnalysisData">Sap Analysis Data:</label>
+                    <input type="number" min="0" id="sapAnalysisData">
+                </div>
+            </div>
+            <div class="row">
+                <div class="item">
+                    <label for="droneImageData">Drone Image Data:</label>
+                    <input type="number" min="0" id="droneImageData">
+                </div>
+                <div class="item">
+                    <label for="nutrientSamplingData">Nutrient Sampling Data:</label>
+                    <input type="number" min="0" id="nutrientSamplingData">
+                </div>
+            </div>
+        </div>
+        <div class="items">
+            <div class="bol">
+                <button onclick="submitData()">Submit</button>
+            </div>
+            <div class="item">
+                <label for="farmerAddress_1">Farmer Address:</label>
+                <input class="topo" type="text" id="farmerAddress_1">
+                <label for="validateDay_1">Day:</label>
+                <input type="number" min="0" id="validateDay_1">
+                <button onclick="getSubmittedData()">View Data</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>Validate Data</h2>
+        <div class="row">
+            <div class="item">
+                <label for="farmerAddress">Farmer Address:</label>
+                <input class="topo" type="text" id="farmerAddress">
+            </div>
+            <div class="item">
+                <label for="validateDay">Day:</label>
+                <input type="number" min="0" id="validateDay">
+                <button onclick="validateSubmittedData()">Validate</button>
+            </div>
+            <div class="item">
+                <label for="claimDay">Day:</label>
+                <input type="number" min="0" id="claimDay">
+                <button onclick="claim()">Claim Tokens</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <script src="https://cdn.ethers.io/lib/ethers-5.2.umd.min.js" type="application/javascript"></script>
+    <script type="text/javascript"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

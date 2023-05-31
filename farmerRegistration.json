@@ -1,0 +1,15 @@
+{
+  "network": "unknown",
+  "contract": {
+    "address": "0x9fE46736679d2D9a65F0992F2272dE9f3c7fa6e0",
+    "signerAddress": "0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266",
+    "abi": [
+      "event FarmerRegistered(address indexed farmerAddress, string name, uint256 age, string location, string phoneNumber, uint256 registrationDate)",
+      "function farmerAddresses(uint256) view returns (address)",
+      "function farmers(address) view returns (string name, uint256 age, string location, string phoneNumber, uint256 registrationDate, bool isRegistered)",
+      "function getFarmerByAddress(address _farmerAddress) view returns (string, uint256, string, string, uint256, bool)",
+      "function getFarmerCount() view returns (uint256)",
+      "function registerFarmer(string _name, uint256 _age, string _location, string _phoneNumber)"
+    ]
+  }
+}
