@@ -1,24 +1,15 @@
-# BlockchainExpert - ERC20 and DEX Contract
+## Sustainable Harvest: Empowering Farmers through Blockchain-based Credit System___WEB-3 TRACK
 
-This project provides two smart contracts, one that implements a ERC20 token and another that allows users to sell/transfer their tokens. This project includes automated testing and a slim frontend for interacting with these contracts.
+### Overview
 
-## Getting Started
+This repository contains the concept and proposal for the Sustainable Farming Hackathon Idea. The goal of this project is to address the challenges faced by farmers in adopting sustainable farming practices, specifically focusing on the lack of financial incentives and the difficulty in validating their efforts. The aim is to enable farmers to access premium markets and incentives, remove the middle men in between and driving the transition towards a more sustainable agricultural sector.
 
-To test and deploy the smart contract follow the steps below.
+### Idea
 
-1. Install [Node.js](https://nodejs.org/en/download/)
-2. Clone the repository: `git clone https://github.com/algoexpert-io/ERC20-DEX.git`
-3. `cd ERC20-DEX`
-4. `npm install`
-5. To test the contract run `npx hardhat test`
-6. To deploy the contract to your `localhost` network do the following:
-   - `npx hardhat node`
-   - `npx hardhat run --network localhost ./script/deploy.js`
+The idea revolves around overcoming the financial constraints faced by farmers during the transition to sustainable farming practices. It proposes the establishment of a comprehensive financial support system that includes credit based system to assist farmers in adopting sustainable methods. By alleviating the financial burden, farmers will be empowered to make the necessary investments in infrastructure, training, and organic inputs, accelerating the transition towards sustainability.
 
-## Using the Frontend
+### DEX-MARKET PLACE
+![image](https://github.com/Yogesh01000100/HACK-SRM-TEAM-BLOCKHIVE/assets/90953665/a5ce999d-20df-40b6-8753-dc9a92d243b8)
 
-1. Install the [Liveserver Extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) in VSCode.
-2. Open [base.html](frontend/base.html)
-3. Click the button that says "Go Live" in the bottom right hand corner of your VSCode.
-4. Import any accounts you need into MetaMask and change your MetaMask network to "Hardhat".
-5. Interact with the contract!
+
+Additionally, the idea addresses the difficulty in validating farmers' efforts and gaining recognition for their sustainability contributions. A reliable validation system will be implemented to certify and verify sustainable farming practices. This system will involve rigorous evaluation and monitoring of farmers' adherence to sustainability standards, providing them with a recognized certification. This validation system will enhance farmers' credibility, boost consumer confidence, and grant them access to markets that prioritize sustainability.
