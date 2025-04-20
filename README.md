@@ -23,5 +23,3 @@ Additionally, the idea addresses the difficulty in validating farmers' efforts a
 - MetaMask
 - HTML/CSS
 - JavaScript
-
-youtube link: https://youtu.be/aRkqJEzUXZk
